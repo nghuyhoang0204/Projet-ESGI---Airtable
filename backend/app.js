@@ -1,13 +1,19 @@
+// filepath: app.js
 require('dotenv').config();
 const express = require('express');
-const cors = require('cors');
-const recipesRoutes = require('./routes/recipes');
-
 const app = express();
-app.use(cors());
+const recipesRouter = require('./routes/recipes'); // ici, on importe le bon router
+
 app.use(express.json());
 
-app.use('/api/recipes', recipesRoutes);
+app.get('/', (req, res) => {
+  res.send('Welcome to the Recette API!');
+});
 
-const PORT = process.env.PORT || 3001;
-app.listen(PORT, () => console.log('Server started on port', PORT));
+// Use the router for /api/recipes
+app.use('/api/recipes', recipesRouter);
+
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
+});
