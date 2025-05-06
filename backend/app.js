@@ -1,8 +1,11 @@
-// filepath: app.js
 require('dotenv').config();
 const express = require('express');
+const cors = require('cors'); // Import the cors middleware
 const app = express();
-const recipesRouter = require('./routes/recipes'); // ici, on importe le bon router
+const recipesRouter = require('./routes/recipes');
+
+// Enable CORS for all origins
+app.use(cors());
 
 app.use(express.json());
 

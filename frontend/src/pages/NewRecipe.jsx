@@ -18,7 +18,8 @@ function NewRecipe() {
 
   return (
     <div>
-      <h1>Créer une nouvelle recette</h1>
+      <h1>Créer une Nouvelle Recette</h1>
+      <p>Remplissez le formulaire ci-dessous pour ajouter une nouvelle recette :</p>
       <form onSubmit={handleSubmit}>
         <input name="Nom" placeholder="Nom" onChange={handleChange} /><br />
         <input name="Ingrédients" placeholder="Ingrédients" onChange={handleChange} /><br />
