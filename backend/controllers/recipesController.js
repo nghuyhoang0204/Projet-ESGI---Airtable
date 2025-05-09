@@ -1,6 +1,6 @@
 
 const airtableService = require('../services/airtableService');
-
+const axios = require('axios');
 exports.getAllRecipes = async (req, res) => {
   try {
     const recipes = await airtableService.fetchAllRecipes();
@@ -16,5 +16,22 @@ exports.createRecipe = async (req, res) => {
     res.status(201).json(newRecipe);
   } catch (error) {
     res.status(500).json({ error: 'Failed to create recipe.' });
+  }
+};
+
+
+exports.searchRecipes = async (req, res) => {
+  const { query } = req.query;
+  if (!query) return res.status(400).json({ error: 'Missing query parameter' });
+
+  console.log('Search query:', query); // Log the query for debugging
+
+  try {
+    const recipes = await airtableService.fetchRecipesByName(query);
+    console.log('Search results:', recipes); // Log the results
+    res.json(recipes);
+  } catch (error) {
+    console.error('Error in searchRecipes:', error.message);
+    res.status(500).json({ error: 'Failed to search recipes by name.' });
   }
 };

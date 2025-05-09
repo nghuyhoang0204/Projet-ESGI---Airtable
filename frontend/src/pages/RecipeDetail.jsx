@@ -17,7 +17,12 @@ function RecipeDetails() {
   return (
     <div>
       <h1>{recipe.Name}</h1>
-      <p>{recipe.ingredient}</p>
+      <p><strong>Ingrédients:</strong> {recipe.ingredient}</p>
+      <h2>Analyse nutritionnelle</h2>
+      <p>Calories: {recipe.nutrition.calories}</p>
+      <p>Protéines: {recipe.nutrition.proteins}g</p>
+      <p>Glucides: {recipe.nutrition.carbs}g</p>
+      <p>Lipides: {recipe.nutrition.fats}g</p>
     </div>
   );
 }
