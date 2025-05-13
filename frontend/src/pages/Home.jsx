@@ -5,10 +5,9 @@ import '../css/Home.css';
 
 function Home() {
   const [recipes, setRecipes] = useState([]);
-  const [searchQuery, setSearchQuery] = useState(''); // State for the search query
+  const [searchQuery, setSearchQuery] = useState('');
 
   useEffect(() => {
-    // Fetch all recipes initially
     axios.get('http://localhost:3000/api/recipes')
       .then(res => setRecipes(res.data))
       .catch(err => console.error(err));
@@ -16,12 +15,10 @@ function Home() {
 
   const handleSearch = () => {
     if (searchQuery.trim() === '') {
-      // If the search query is empty, fetch all recipes
       axios.get('http://localhost:3000/api/recipes')
         .then(res => setRecipes(res.data))
         .catch(err => console.error(err));
     } else {
-      // Otherwise, perform the search
       axios.get(`http://localhost:3000/api/recipes/search?query=${searchQuery}`)
         .then(res => setRecipes(res.data))
         .catch(err => console.error(err));
@@ -38,8 +35,8 @@ function Home() {
           placeholder="Rechercher par nom, ingrédient ou type de plat..."
           value={searchQuery}
           onChange={(e) => {
-            setSearchQuery(e.target.value); // Update the search query state
-            handleSearch(); // Trigger search automatically on input change
+            setSearchQuery(e.target.value);
+            handleSearch();
           }}
         />
       </div>
@@ -51,19 +48,14 @@ function Home() {
           .filter((r) => r.Image && r.Image.length > 0)
           .map((r) => (
             <li key={r.id} className="recipe-card">
-              <h2>{r.Name || 'Sans nom'}</h2>
-              {r.Type && <p><strong>Type :</strong> {r.Type}</p>}
-              {r.QpourNbPers && <p><strong>Pour :</strong> {r.QpourNbPers} personne(s)</p>}
-              {r.url && (
-                <p>
-                  <a href={r.url} target="_blank" rel="noopener noreferrer">
-                    Voir la recette originale
-                  </a>
-                </p>
-              )}
-              {r.Image?.[0]?.url && (
-                <img className="recipe-image" src={r.Image[0].url} alt={r.Name} />
-              )}
+              <Link to={`/recipes/${r.id}`} className="recipe-link">
+                <h2>{r.Name || 'Sans nom'}</h2>
+                {r.Type && <p><strong>Type :</strong> {r.Type}</p>}
+                {r.QpourNbPers && <p><strong>Pour :</strong> {r.QpourNbPers} personne(s)</p>}
+                {r.Image?.[0]?.url && (
+                  <img className="recipe-image" src={r.Image[0].url} alt={r.Name} />
+                )}
+              </Link>
             </li>
           ))}
       </ul>

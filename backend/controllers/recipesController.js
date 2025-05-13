@@ -1,4 +1,3 @@
-
 const airtableService = require('../services/airtableService');
 const axios = require('axios');
 exports.getAllRecipes = async (req, res) => {
@@ -33,5 +32,15 @@ exports.searchRecipes = async (req, res) => {
   } catch (error) {
     console.error('Error in searchRecipes:', error.message);
     res.status(500).json({ error: 'Failed to search recipes by name.' });
+  }
+};
+
+exports.getRecipeById = async (req, res) => {
+  const { id } = req.params;
+  try {
+    const recipe = await airtableService.fetchRecipeById(id);
+    res.json(recipe);
+  } catch (error) {
+    res.status(500).json({ error: 'Failed to fetch recipe details.' });
   }
 };

@@ -1,0 +1,140 @@
+{
+  "aubergine": {
+    "calories": 25,
+    "proteins": 1,
+    "carbs": 6,
+    "fats": 0.2
+  },
+  "sucre": {
+    "calories": 387,
+    "proteins": 0,
+    "carbs": 100,
+    "fats": 0
+  },
+  "jus de citron": {
+    "calories": 22,
+    "proteins": 0.3,
+    "carbs": 6.9,
+    "fats": 0.2
+  },
+  "nuoc-mam": {
+    "calories": 20,
+    "proteins": 4,
+    "carbs": 1,
+    "fats": 0
+  },
+  "ciboule": {
+    "calories": 32,
+    "proteins": 1.8,
+    "carbs": 7.3,
+    "fats": 0.2
+  },
+  "gousse d'ail": {
+    "calories": 149,
+    "proteins": 6.4,
+    "carbs": 33,
+    "fats": 0.5
+  },
+  "gingembre": {
+    "calories": 80,
+    "proteins": 1.8,
+    "carbs": 18,
+    "fats": 0.8
+  },
+  "huile végétale": {
+    "calories": 884,
+    "proteins": 0,
+    "carbs": 0,
+    "fats": 100
+  },
+  "sauce soja": {
+    "calories": 53,
+    "proteins": 8,
+    "carbs": 4.9,
+    "fats": 0.6
+  },
+  "crème fraiche": {
+    "calories": 292,
+    "proteins": 2,
+    "carbs": 2.9,
+    "fats": 30
+  },
+  "fromage blanc": {
+    "calories": 86,
+    "proteins": 8,
+    "carbs": 3.9,
+    "fats": 3.2
+  },
+  "carottes": {
+    "calories": 41,
+    "proteins": 0.9,
+    "carbs": 10,
+    "fats": 0.2
+  },
+  "courgette": {
+    "calories": 17,
+    "proteins": 1.2,
+    "carbs": 3.1,
+    "fats": 0.3
+  },
+  "chou fleur": {
+    "calories": 25,
+    "proteins": 1.9,
+    "carbs": 5,
+    "fats": 0.3
+  },
+  "riz": {
+    "calories": 130,
+    "proteins": 2.7,
+    "carbs": 28,
+    "fats": 0.3
+  },
+  "oignon": {
+    "calories": 40,
+    "proteins": 1.1,
+    "carbs": 9.3,
+    "fats": 0.1
+  },
+  "pommes de terre": {
+    "calories": 77,
+    "proteins": 2,
+    "carbs": 17,
+    "fats": 0.1
+  },
+  "beurre": {
+    "calories": 717,
+    "proteins": 0.9,
+    "carbs": 0.1,
+    "fats": 81
+  },
+  "farine": {
+    "calories": 364,
+    "proteins": 10,
+    "carbs": 76,
+    "fats": 1
+  },
+  "lait": {
+    "calories": 42,
+    "proteins": 3.4,
+    "carbs": 5,
+    "fats": 1
+  },
+  "œuf": {
+    "calories": 155,
+    "proteins": 13,
+    "carbs": 1.1,
+    "fats": 11
+  },
+  "yaourt": {
+    "calories": 59,
+    "proteins": 10,
+    "carbs": 3.6,
+    "fats": 0.4
+  },
+  "tomate": {
+    "calories": 18,
+    "proteins": 0.9,
+    "carbs": 3.9,
+    "fats": 0.2
+  }
+}
