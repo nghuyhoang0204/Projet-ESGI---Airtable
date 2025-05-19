@@ -1,0 +1,64 @@
+.new-recipe-container {
+  max-width: 500px;
+  margin: 2rem auto;
+  padding: 2rem 2.5rem;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+  font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+.new-recipe-container h1 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: #2d3748;
+}
+
+.new-recipe-form input {
+  width: 100%;
+  padding: 0.7rem;
+  margin-bottom: 1rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  font-size: 1rem;
+  background: #f9fafb;
+  transition: border 0.2s;
+}
+
+.new-recipe-form input:focus {
+  border: 1.5px solid #3182ce;
+  outline: none;
+}
+
+.new-recipe-form button {
+  width: 100%;
+  padding: 0.8rem;
+  background: #3182ce;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.new-recipe-form button:disabled {
+  background: #90cdf4;
+  cursor: not-allowed;
+}
+
+.new-recipe-form button:hover:not(:disabled) {
+  background: #2563eb;
+}
+
+.generated-recipe {
+  margin-top: 2rem;
+  background: #f1f5f9;
+  border-radius: 8px;
+  padding: 1.2rem;
+}
+
+.generated-recipe h2 {
+  color: #38a169;
+  margin-bottom: 0.7rem;
+}

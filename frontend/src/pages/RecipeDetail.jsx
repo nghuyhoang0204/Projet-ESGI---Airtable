@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
-
+import '../css/RecipeDetail.css';
 function RecipeDetails() {
   const { id } = useParams();
   const [recipe, setRecipe] = useState(null);
@@ -25,7 +25,7 @@ function RecipeDetails() {
   } = recipe;
 
   return (
-    <div style={{ padding: '2rem', maxWidth: '700px', margin: 'auto', fontFamily: 'sans-serif' }}>
+    <div className="recipe-detail-container" style={{ padding: '2rem', maxWidth: '700px', margin: 'auto', fontFamily: 'sans-serif' }}>
       <h1>{Name}</h1>
 
       {ingredient && (

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import '../css/NewRecipe.css';
 
 
 function NewRecipe() {
@@ -28,7 +29,7 @@ function NewRecipe() {
   };
 
   return (
-    <div>
+    <div className="new-recipe-container">
       <h1>Créer une Nouvelle Recette (IA)</h1>
       <form onSubmit={handleGenerate}>
         <input
