@@ -10,7 +10,7 @@ exports.generateRecipe = async (ingredients, servings, intolerances) => {
 
   try {
     const response = await openai.chat.completions.create({
-      model: 'gpt-3.5-turbo', // Or 'gpt-4o' if you have access
+      model: 'gpt-3.5-turbo', 
       messages: [
         { role: 'system', content: 'You are a helpful chef assistant.' },
         { role: 'user', content: prompt }

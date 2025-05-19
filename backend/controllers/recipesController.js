@@ -24,11 +24,11 @@ exports.searchRecipes = async (req, res) => {
   const { query } = req.query;
   if (!query) return res.status(400).json({ error: 'Missing query parameter' });
 
-  console.log('Search query:', query); // Log the query for debugging
+  console.log('Search query:', query); 
 
   try {
     const recipes = await airtableService.fetchRecipesByName(query);
-    console.log('Search results:', recipes); // Log the results
+    console.log('Search results:', recipes); 
     res.json(recipes);
   } catch (error) {
     console.error('Error in searchRecipes:', error.message);
