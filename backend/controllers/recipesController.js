@@ -1,4 +1,5 @@
 const airtableService = require('../services/airtableService');
+const { generateRecipe } = require('../services/recipesGenerationService');
 const axios = require('axios');
 exports.getAllRecipes = async (req, res) => {
   try {
@@ -42,5 +43,19 @@ exports.getRecipeById = async (req, res) => {
     res.json(recipe);
   } catch (error) {
     res.status(500).json({ error: 'Failed to fetch recipe details.' });
+  }
+};
+
+
+exports.generateRecipeAI = async (req, res) => {
+  const { ingredients, servings, intolerances } = req.body;
+  if (!ingredients || !servings) {
+    return res.status(400).json({ error: 'Missing required fields.' });
+  }
+  try {
+    const recipe = await generateRecipe(ingredients, servings, intolerances || []);
+    res.json({ recipe });
+  } catch (error) {
+    res.status(500).json({ error: 'Failed to generate recipe.' });
   }
 };

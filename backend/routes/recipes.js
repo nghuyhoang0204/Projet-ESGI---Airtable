@@ -9,4 +9,6 @@ router.get('/', recipesController.getAllRecipes);
 
 router.get('/:id', recipesController.getRecipeById);
 
+router.post('/generate', recipesController.generateRecipeAI);
+
 module.exports = router;
