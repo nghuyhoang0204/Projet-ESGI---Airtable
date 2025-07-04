@@ -46,20 +46,52 @@ async function computeNutrition(ingredients = []) {
         proteins: 0,
         carbs: 0,
         fats: 0,
-        vitamins: [],
-        minerals: []
+        vitamins: new Set(),
+        minerals: new Set()
     };
 
     results.forEach(data => {
         if (data) {
-            nutrition.calories += data.calories;
-            nutrition.proteins += data.proteins;
-            nutrition.carbs += data.carbs;
-            nutrition.fats += data.fats;
+            nutrition.calories += data.calories || 0;
+            nutrition.proteins += data.proteins || 0;
+            nutrition.carbs += data.carbs || 0;
+            nutrition.fats += data.fats || 0;
+            
+            // Ajouter des vitamines et minéraux basiques selon l'ingrédient
+            if (data.vitamins) {
+                data.vitamins.forEach(v => nutrition.vitamins.add(v));
+            }
+            if (data.minerals) {
+                data.minerals.forEach(m => nutrition.minerals.add(m));
+            }
+            
+            // Ajouter des estimations par défaut selon le type d'ingrédient
+            const ingredientLower = data.name?.toLowerCase() || '';
+            if (ingredientLower.includes('carotte') || ingredientLower.includes('épinard')) {
+                nutrition.vitamins.add('Vitamine A');
+            }
+            if (ingredientLower.includes('orange') || ingredientLower.includes('citron')) {
+                nutrition.vitamins.add('Vitamine C');
+            }
+            if (ingredientLower.includes('lait') || ingredientLower.includes('fromage')) {
+                nutrition.minerals.add('Calcium');
+                nutrition.vitamins.add('Vitamine D');
+            }
+            if (ingredientLower.includes('viande') || ingredientLower.includes('poisson')) {
+                nutrition.minerals.add('Fer');
+                nutrition.vitamins.add('Vitamine B12');
+            }
         }
     });
 
-    return nutrition;
+    return {
+        calories: nutrition.calories,
+        proteins: nutrition.proteins,
+        carbs: nutrition.carbs,
+        fats: nutrition.fats,
+        vitamins: Array.from(nutrition.vitamins),
+        minerals: Array.from(nutrition.minerals)
+    };
 }
 
 module.exports = { computeNutrition };

@@ -4,13 +4,16 @@
 Ce projet consiste à réaliser un système de génération et de gestion de recettes de cuisine personnalisées avec analyse nutritionnelle. Il permettra aux utilisateurs de créer, rechercher et consulter des recettes tout en fournissant des informations nutritionnelles détaillées.
 
 ## Fonctionnalités principales
-- **Visualisation des recettes** : Afficher la liste des recettes précédemment créées.
-- **Détail des recettes** : Consulter les détails d'une recette, y compris son analyse nutritionnelle (calories, protéines, glucides, lipides, vitamines, minéraux).
-- **Recherche de recettes** : Rechercher une recette par nom, ingrédient ou type de plat.
-- **Création de recettes** : Générer une nouvelle recette en renseignant :
+- ✅ **Visualisation des recettes** : Afficher la liste des recettes précédemment créées avec interface moderne.
+- ✅ **Détail des recettes** : Consulter les détails d'une recette, y compris son analyse nutritionnelle complète (calories, protéines, glucides, lipides, vitamines, minéraux).
+- ✅ **Recherche de recettes** : Rechercher une recette par nom, ingrédient ou type de plat en temps réel.
+- ✅ **Création de recettes avec IA** : Générer une nouvelle recette en renseignant :
   - Les ingrédients.
   - Le nombre de personnes.
   - Les intolérances alimentaires.
+- ✅ **Analyse nutritionnelle automatique** : Calcul automatique des valeurs nutritionnelles.
+- ✅ **Sauvegarde automatique** : Les recettes générées sont automatiquement sauvegardées.
+- ✅ **Interface responsive** : Design moderne et adaptatif.
 
 ## Contraintes techniques
 - **Base de données** : Utilisation d'[Airtable](https://airtable.com/) pour stocker les données.
@@ -30,39 +33,57 @@ Ce projet consiste à réaliser un système de génération et de gestion de rec
 - **IA** : Modèles d'IA comme OpenAI, TensorFlow.js ou d'autres services d'analyse nutritionnelle.
 
 ## Installation et exécution
+
+### Méthode rapide (recommandée)
 1. Clonez le dépôt du projet :
    ```bash
    git clone <url-du-repo>
    ```
-2. Installez les dépendances :
+2. Configurez les fichiers d'environnement :
+   - Backend : Copiez `backend/.env.example` vers `backend/.env`
+   - Frontend : Copiez `frontend/.env.example` vers `frontend/.env`
+   - Remplissez vos clés API Airtable et OpenAI
+
+3. Lancez l'application complète :
    ```bash
+   # Sur Windows
+   start-dev.bat
+   
+   # Sur Mac/Linux
+   chmod +x start-dev.sh && ./start-dev.sh
+   ```
+
+### Méthode manuelle
+1. **Configuration Backend**
+   ```bash
+   cd backend
    npm install
-   ```
-3. Configurez les clés API pour Airtable et le modèle d'IA dans un fichier `.env`.
-   Backend
-   ```bash
-    PORT=3000
-    AIRTABLE_API_KEY=patr4SAoSpJUjLWPz.2eb2a36ba0e4912852d49d9f7f8bc7e6575098fac27359d3335bc908759e3536
-    AIRTABLE_BASE_ID=app0Ex9sizvsWiWwm
-    JWT_SECRET=supersecretjwtkey
+   # Configurez votre fichier .env avec vos clés API
+   node app.js
    ```
 
-   Frontend
+2. **Configuration Frontend**
    ```bash
-   VITE_API_URL=http://localhost:3000/
+   cd frontend  
+   npm install
+   npm run dev
    ```
 
+### Variables d'environnement requises
 
-4. Lancez le projet :
-    Backend
-   ```bash
-    node app.js (localhost:3000)
-   ```
+**Backend (.env)**
+```bash
+PORT=3000
+AIRTABLE_API_KEY=votre_cle_api_airtable
+AIRTABLE_BASE_ID=votre_base_id_airtable  
+OPENAI_API_KEY=votre_cle_api_openai
+JWT_SECRET=supersecretjwtkey
+```
 
-    Frontend
-   ```bash
-    npm run dev (localhost:5137)
-   ```
+**Frontend (.env)**
+```bash
+VITE_API_URL=http://localhost:3000
+```
 
 
 ## Auteurs

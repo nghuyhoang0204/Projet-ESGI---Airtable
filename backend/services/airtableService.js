@@ -1,4 +1,3 @@
-
 const Airtable = require('airtable');
 require('dotenv').config();
 
@@ -77,6 +76,19 @@ exports.fetchRecipeById = async (id) => {
   } catch (error) {
     console.error('Error fetching recipe by ID from Airtable:', error.message);
     throw new Error('Failed to fetch recipe by ID from Airtable.');
+  }
+};
+
+exports.updateRecipe = async (id, data) => {
+  try {
+    const updatedRecord = await base('Plat').update(id, data);
+    return {
+      id: updatedRecord.id,
+      ...updatedRecord.fields
+    };
+  } catch (error) {
+    console.error('Error updating recipe in Airtable:', error.message);
+    throw new Error('Failed to update recipe in Airtable.');
   }
 };
 
