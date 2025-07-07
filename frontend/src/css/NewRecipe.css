@@ -1,11 +1,190 @@
+/* Styles modernes pour la création de recettes */
 .new-recipe-container {
-  max-width: 500px;
-  margin: 2rem auto;
-  padding: 2rem 2.5rem;
-  background: #fff;
+  font-family: 'Inter', sans-serif;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.new-recipe-form {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(20px);
+  border-radius: 24px;
+  padding: 3rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+  margin-bottom: 2rem;
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 1rem;
+  font-size: 1.3em;
+  font-weight: 600;
+  color: white;
+  font-family: 'Inter', sans-serif;
+}
+
+.form-input {
+  width: 100%;
+  padding: 20px;
   border-radius: 16px;
-  box-shadow: 0 4px 24px rgba(0,0,0,0.08);
-  font-family: 'Segoe UI', Arial, sans-serif;
+  border: none;
+  font-size: 1.1rem;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  outline: none;
+  font-family: 'Inter', sans-serif;
+  transition: all 0.3s ease;
+}
+
+.form-input:focus {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.15);
+}
+
+.form-textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.generate-button {
+  width: 100%;
+  padding: 20px;
+  border-radius: 50px;
+  border: none;
+  font-size: 1.4em;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+  color: white;
+  box-shadow: 0 8px 30px rgba(255, 107, 107, 0.4);
+}
+
+.generate-button:hover:not(:disabled) {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 40px rgba(255, 107, 107, 0.6);
+}
+
+.generate-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  background: rgba(255, 255, 255, 0.3);
+  box-shadow: none;
+}
+
+.nutrition-card {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(20px);
+  border-radius: 24px;
+  padding: 2.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  margin-bottom: 2rem;
+}
+
+.nutrition-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.nutrition-item {
+  background: rgba(255, 255, 255, 0.9);
+  padding: 1.5rem;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.recipe-result {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  border-radius: 24px;
+  padding: 3rem;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.recipe-content {
+  background: #f8f9fa;
+  padding: 2rem;
+  border-radius: 16px;
+  font-size: 1.2em;
+  line-height: 1.8;
+  white-space: pre-wrap;
+  color: #2c3e50;
+  border: 1px solid #e9ecef;
+  font-family: 'Inter', sans-serif;
+}
+
+.success-section {
+  margin-top: 3rem;
+  text-align: center;
+  padding: 2rem;
+  background: linear-gradient(45deg, #4caf50, #8bc34a);
+  border-radius: 20px;
+  color: white;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+
+.action-button {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  color: white;
+  padding: 15px 30px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50px;
+  font-size: 1.2em;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.action-button:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .new-recipe-form {
+    padding: 2rem;
+  }
+  
+  .nutrition-grid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+  }
+  
+  .form-label {
+    font-size: 1.1em;
+  }
+  
+  .generate-button {
+    font-size: 1.2em;
+    padding: 18px;
+  }
+  
+  .action-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 .new-recipe-container h1 {
