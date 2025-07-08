@@ -1,7 +1,8 @@
+require('dotenv').config();
 const { OpenAI } = require('openai');
 
 const openai = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY,
+  apiKey: process.env.OPENAI_APIKEY,
 });
 
 exports.generateRecipe = async (ingredients, servings, intolerances) => {

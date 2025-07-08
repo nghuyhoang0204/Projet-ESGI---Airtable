@@ -42,9 +42,9 @@ Ce projet consiste à réaliser un système de génération et de gestion de rec
    Backend
    ```bash
     PORT=3000
-    OPENAI_API_KEY=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
-    AIRTABLE_API_KEY=patr4SAoSpJUjLWPz.2eb2a36ba0e4912852d49d9f7f8bc7e6575098fac27359d3335bc908759e3536
-    AIRTABLE_BASE_ID=app0Ex9sizvsWiWwm
+    OPENAI_API_KEY=Your_OPENAI_KEY
+    AIRTABLE_API_KEY=AIRTABLE_KEY
+    AIRTABLE_BASE_ID=BASE_ID
     JWT_SECRET=supersecretjwtkey
    ```
 
